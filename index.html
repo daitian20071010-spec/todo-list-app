@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>清波待办</title>
+    <meta
+      name="description"
+      content="一个清新现代的待办事项应用，支持本地存储、任务统计与响应式布局。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-left" aria-hidden="true"></div>
+      <div class="ambient ambient-right" aria-hidden="true"></div>
+
+      <main class="app-card">
+        <header class="hero">
+          <p class="eyebrow">Blue Focus Planner</p>
+          <h1>待办事项</h1>
+          <p class="hero-copy">
+            记录今天真正重要的事。添加、勾选、删除，所有内容都会自动保存在本地。
+          </p>
+        </header>
+
+        <section class="composer" aria-label="添加待办事项">
+          <div class="composer-row">
+            <label class="sr-only" for="todo-input">输入任务内容</label>
+            <input
+              id="todo-input"
+              class="todo-input"
+              type="text"
+              placeholder="输入你的下一件重要事项"
+              maxlength="120"
+            />
+            <div class="priority-select">
+              <label class="sr-only" for="priority-input">选择优先级</label>
+              <select id="priority-input" class="priority-input">
+                <option value="low">低</option>
+                <option value="medium" selected>中</option>
+                <option value="high">高</option>
+              </select>
+            </div>
+            <button id="add-button" class="add-button" type="button">添加任务</button>
+          </div>
+        </section>
+
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+
+        <section class="stats-grid" aria-label="任务统计">
+          <article class="stat-card">
+            <span class="stat-label">未完成</span>
+            <strong id="pending-count" class="stat-value">0</strong>
+          </article>
+          <article class="stat-card stat-card-accent">
+            <span class="stat-label">已完成</span>
+            <strong id="completed-count" class="stat-value">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">总任务</span>
+            <strong id="total-count" class="stat-value">0</strong>
+          </article>
+        </section>
+
+        <section class="list-panel" aria-label="任务列表">
+          <div class="list-head">
+            <div>
+              <h2>任务列表</h2>
+              <p>勾选即可完成，删除会立即同步保存。</p>
+            </div>
+            <button id="clear-all-button" class="clear-all-button" type="button">
+              全部清空
+            </button>
+          </div>
+
+          <ul id="todo-list" class="todo-list"></ul>
+
+          <div id="empty-state" class="empty-state">
+            <span class="empty-badge">Ready</span>
+            <h3>还没有待办事项</h3>
+            <p>从上方输入框开始，整理今天的节奏。</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

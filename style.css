@@ -124,6 +124,28 @@ input {
   line-height: 1.75;
 }
 
+.page-nav {
+  margin-top: 14px;
+}
+
+.page-nav-link {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid rgba(91, 158, 244, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--blue-strong);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.page-nav-link:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
 .composer {
   display: flex;
   flex-direction: column;
